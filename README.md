@@ -1,1 +1,1 @@
-npm install
+Harus melakukan npm install terlebih dahulu
