@@ -39,6 +39,9 @@ class Header extends React.Component {
               <Link to="/favorites" data-testid="link-to-favorites">
                 Favorite
               </Link>
+              <Link to="/topalbums" data-testid="link-to-topalbums">
+                Top Album
+              </Link>
               <Link to="/aboutus" data-testid="link-to-aboutus">
                 About Us
               </Link>
