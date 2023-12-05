@@ -40,9 +40,8 @@ class TopAlbums extends React.Component {
                     response.length > 0 ? (
                         response.map((item, index) =>
                             <ListTop key={index}>
-                                <h3>{index+1}</h3>
-                                <br />
-                                <img src={item.artworkUrl100} width={100} alt="poster"/>
+                                {/* <h3>{index+1}</h3> */}
+                                <img src={item.artworkUrl100} alt="poster"/>
                                 <h1>{item.collectionName}</h1>
                                 <h2>{item.artistName}</h2>
                             </ListTop>
