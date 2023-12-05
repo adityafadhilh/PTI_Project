@@ -13,8 +13,8 @@ export const topAlbumsData = [
     },
     {
         artistId: 3,
-        artistName: "Wish You Were Here",
-        collectionName: "Pink Floyd",
+        artistName: "Pink Floyd",
+        collectionName: "Wish You Were Here",
         artworkUrl100: "https://e.snmc.io/i/300/w/4a254e6f1a9d64edae48659b98939b2e/4184635/Pink%20Floyd%20-%20Wish%20You%20Were%20Here%2C%20Cover%20art.webp"
     },
     {
@@ -49,14 +49,14 @@ export const topAlbumsData = [
     },
     {
         artistId: 9,
-        artistName: "Loveless",
-        collectionName: "My Bloody Valentine",
+        artistName: "My Bloody Valentine",
+        collectionName: "Loveless",
         artworkUrl100: "https://e.snmc.io/i/300/w/e2b1f17f208ef01174446bab527902e9/8080265/My%20Bloody%20Valentine%20-%20Loveless%2C%20Cover%20art.webp"
     },
     {
         artistId: 10,
-        artistName: "The Dark Side of the Moon",
-        collectionName: "Pink Floyd",
+        artistName: "Pink Floyd",
+        collectionName: "The Dark Side of the Moon",
         artworkUrl100: "https://e.snmc.io/i/300/w/59977e03acbdfd4c017f8f4fcff3458d/11510042/Pink%20Floyd%20-%20The%20Dark%20Side%20of%20the%20Moon%2C%20Cover%20art.webp"
     },
 ]
