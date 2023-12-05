@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import Search from "./pages/Search";
 import GlobalStyles from "./styles/GlobalStyles";
+import TopAlbums from "./pages/TopAlbums";
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ class App extends React.Component {
             render={(props) => <Album {...props} />}
           />
           <Route exact path="/favorites" component={Favorites} />
+          <Route exact path="/topalbums" component={TopAlbums} />
           <Route exact path="/aboutus" component={AboutUs} />
           <Route path="*" component={NotFound} />
         </Switch>
