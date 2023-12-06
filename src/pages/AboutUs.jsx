@@ -11,10 +11,11 @@ import {
   Image,
   ImageCaption,
 } from "../styles/pages/AboutUs";
-import fauzan from "../assets/images/fauzan.jpg";
-import fito from "../assets/images/fito.jpg";
-import syahri from "../assets/images/syahri.jpg";
-import reinhard from "../assets/images/reinhard.jpg";
+// import fauzan from "../assets/images/fauzan.jpg";
+// import fito from "../assets/images/fito.jpg";
+// import syahri from "../assets/images/syahri.jpg";
+// import reinhard from "../assets/images/reinhard.jpg";
+import avatar from "../assets/images/avatar.jpg";
 
 const AboutUs = () => {
   return (
@@ -49,20 +50,24 @@ const AboutUs = () => {
         <TeamTitle>Our Team</TeamTitle>
         <ImageContainer>
           <ImageWrapper>
-            <Image src={fauzan} alt="fauzan" />
-            <ImageCaption>Fauzan</ImageCaption>
+            <Image src={avatar} alt="Aditya" />
+            <ImageCaption>Aditya</ImageCaption>
           </ImageWrapper>
           <ImageWrapper>
-            <Image src={fito} alt="fito" />
-            <ImageCaption>Fito</ImageCaption>
+            <Image src={avatar} alt="Arland" />
+            <ImageCaption>Arland</ImageCaption>
           </ImageWrapper>
           <ImageWrapper>
-            <Image src={reinhard} alt="reinhard" />
-            <ImageCaption>Reinhard</ImageCaption>
+            <Image src={avatar} alt="Farrel" />
+            <ImageCaption>Farrel</ImageCaption>
           </ImageWrapper>
           <ImageWrapper>
-            <Image src={syahri} alt="syahri" />
-            <ImageCaption>Syahri</ImageCaption>
+            <Image src={avatar} alt="Nevada" />
+            <ImageCaption>Nevada</ImageCaption>
+          </ImageWrapper>
+          <ImageWrapper>
+            <Image src={avatar} alt="Putu" />
+            <ImageCaption>Putu</ImageCaption>
           </ImageWrapper>
         </ImageContainer>
       </div>
