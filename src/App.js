@@ -12,7 +12,7 @@ import TopAlbums from "./pages/TopAlbums";
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/PTI_Project">
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/search" component={Search} />
