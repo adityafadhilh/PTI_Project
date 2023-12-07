@@ -11,10 +11,6 @@ import {
   Image,
   ImageCaption,
 } from "../styles/pages/AboutUs";
-// import fauzan from "../assets/images/fauzan.jpg";
-// import fito from "../assets/images/fito.jpg";
-// import syahri from "../assets/images/syahri.jpg";
-// import reinhard from "../assets/images/reinhard.jpg";
 import avatar from "../assets/images/avatar.jpg";
 
 const AboutUs = () => {
