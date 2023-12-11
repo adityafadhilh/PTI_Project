@@ -23,9 +23,9 @@ function Header() {
   return (
 
     // <header>
-      // {loading ? (
-      //   <Loading />
-      // ) : (
+    // {loading ? (
+    //   <Loading />
+    // ) : (
     //     <MainHeader>
     //       <nav>
     //         <img src={LogoNavbar} alt="logoNavbar" />
@@ -45,7 +45,7 @@ function Header() {
     //     </MainHeader>
     //   )}
     // </header>
-    
+
     <Navbar fixed="top" expand="lg" bg="light">
       <Container>
         {/* <img src={LogoNavbar} alt="logoNavbar" width={70} /> */}
@@ -53,10 +53,18 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-center" style={{ flex: 1 }}>
-            <Nav.Link href="/search">Home</Nav.Link>
-            <Nav.Link href="/favorites">Favorite</Nav.Link>
-            <Nav.Link href="/topalbums">Top Album</Nav.Link>
-            <Nav.Link href="/aboutus">About Us</Nav.Link>
+            <Link to="/search" className="nav-link" data-testid="link-to-search">
+              Home
+            </Link>
+            <Link to="/favorites" className="nav-link" data-testid="link-to-favorites">
+              Favorite
+            </Link>
+            <Link to="/topalbums" className="nav-link" data-testid="link-to-topalbums">
+              Top Album
+            </Link>
+            <Link to="/aboutus" className="nav-link" data-testid="link-to-aboutus">
+              About Us
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
