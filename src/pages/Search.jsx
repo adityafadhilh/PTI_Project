@@ -52,7 +52,7 @@ class Search extends React.Component {
           <Loading />
         ) : (
           <MainForm>
-            <h1>Search the artist:</h1>
+            <h1 style={{ color: "black" }}>Search the artist:</h1>
             <label htmlFor="artist">
               <Input
                 type="text"

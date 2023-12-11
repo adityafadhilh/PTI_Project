@@ -41,9 +41,9 @@ class Album extends React.Component {
             </div>
             <MusicList>
                 {songs.filter((song) => song !== info)
-                  .map((song) => (<MusicCard
-                    song={ song }
-                    key={ song.trackId }
+                  .map((s) => (<MusicCard
+                    song={ s }
+                    key={ s.trackId }
                   />))}
             </MusicList>
           </InfoDetails>
