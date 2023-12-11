@@ -12,6 +12,8 @@ import {
   ImageCaption,
 } from "../styles/pages/AboutUs";
 import avatar from "../assets/images/avatar.jpg";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const AboutUs = () => {
   return (
@@ -44,28 +46,41 @@ const AboutUs = () => {
       </Section>
       <div>
         <TeamTitle>Our Team</TeamTitle>
-        <ImageContainer>
-          <ImageWrapper>
-            <Image src={avatar} alt="Aditya" />
-            <ImageCaption>Aditya</ImageCaption>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Image src={avatar} alt="Arland" />
-            <ImageCaption>Arland</ImageCaption>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Image src={avatar} alt="Farrel" />
-            <ImageCaption>Farrel</ImageCaption>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Image src={avatar} alt="Nevada" />
-            <ImageCaption>Nevada</ImageCaption>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Image src={avatar} alt="Putu" />
-            <ImageCaption>Putu</ImageCaption>
-          </ImageWrapper>
-        </ImageContainer>
+
+        <Row className="justify-content-md-center">
+          <Col sm>
+            <ImageWrapper>
+              <Image src={avatar} alt="Aditya" />
+              <ImageCaption>Aditya</ImageCaption>
+            </ImageWrapper>
+          </Col>
+          <Col sm>
+            <ImageWrapper>
+              <Image src={avatar} alt="Arland" />
+              <ImageCaption>Arland</ImageCaption>
+            </ImageWrapper>
+          </Col>
+          <Col sm>
+            <ImageWrapper>
+              <Image src={avatar} alt="Farrel" />
+              <ImageCaption>Farrel</ImageCaption>
+            </ImageWrapper>
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          <Col sm>
+            <ImageWrapper>
+              <Image src={avatar} alt="Nevada" />
+              <ImageCaption>Nevada</ImageCaption>
+            </ImageWrapper>
+          </Col>
+          <Col sm>
+            <ImageWrapper>
+              <Image src={avatar} alt="Putu" />
+              <ImageCaption>Putu</ImageCaption>
+            </ImageWrapper>
+          </Col>
+        </Row>
       </div>
     </div>
   );
