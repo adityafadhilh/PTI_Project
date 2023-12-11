@@ -57,6 +57,7 @@ class Login extends React.Component {
               type="text"
               onChange={this.verify}
               placeholder="Insert your name.."
+              className="fw-bolder text-dark"
             />
             <Button
               type="submit"

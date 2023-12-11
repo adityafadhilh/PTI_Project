@@ -49,10 +49,13 @@ function Header() {
     <Navbar fixed="top" expand="lg" bg="light">
       <Container>
         {/* <img src={LogoNavbar} alt="logoNavbar" width={70} /> */}
-        <Navbar.Brand href="/search">ASDIC</Navbar.Brand>
+        {/* <Navbar.Brand href="/">ASDIC</Navbar.Brand> */}
+        <Link to="/search" className="navbar-brand" data-testid="link-to-search-brand">
+          ASDIC
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-center" style={{ flex: 1 }}>
+          <Nav className="me-auto justify-content-center text-start" style={{ flex: 1 }}>
             <Link to="/search" className="nav-link" data-testid="link-to-search">
               Home
             </Link>
