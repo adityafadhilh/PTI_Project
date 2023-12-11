@@ -3,7 +3,7 @@ const searchAlbumsAPI = async (artist) => {
 
   const getAlbumsAPI = `https://itunes.apple.com/search?entity=album&term=${artistNameURL}&attribute=allArtistTerm`;
 
-  const APIResponse = await fetch(getAlbumsAPI);
+  const APIResponse = await fetch(getAlbumsAPI, { mode: 'cors'});
 
   const { results } = await APIResponse.json();
 

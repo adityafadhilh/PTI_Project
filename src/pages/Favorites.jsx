@@ -30,7 +30,7 @@ class Favorites extends React.Component {
     return (
       <DivFavorites>
         <Header />
-        <h1 className="titleFavs">Favorite</h1>
+        <h1 className="titleFavs mt-5 text-dark fw-bold">Favorite</h1>
         <div className="divFavorites">
           {loading ? (
             <Loading />

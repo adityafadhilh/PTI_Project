@@ -38,9 +38,14 @@ class Search extends React.Component {
 
   fetchArtist = async () => {
     const { artistInput } = this.state;
-    this.setState({ loading: true });
-    const response = await searchAlbumsAPI(artistInput);
-    this.setState({ loading: false, response, artistInput: " " });
+    try {
+      this.setState({ loading: true });
+      const response = await searchAlbumsAPI(artistInput);
+      this.setState({ loading: false, response, artistInput: " " });
+    } catch (error) {
+      console.log(error);
+    }
+
   };
 
   render() {
@@ -52,13 +57,14 @@ class Search extends React.Component {
           <Loading />
         ) : (
           <MainForm>
-            <h1 style={{ color: "black" }}>Search the artist:</h1>
+            <h1 className="fw-bold text-dark mt-5">Search the artist:</h1>
             <label htmlFor="artist">
               <Input
                 type="text"
                 placeholder="Artist, album, song.."
                 value={artistInput}
                 onChange={this.inputArtist}
+                className="fw-bolder text-dark"
               />
             </label>
             <Button

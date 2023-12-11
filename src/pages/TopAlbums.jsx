@@ -33,7 +33,7 @@ class TopAlbums extends React.Component {
         return (
             <div>
                 <Header />
-                <h1 style={{ textAlign: "center", marginTop: 100 }}>Top Albums</h1>
+                <h1 style={{ marginTop: 100  }} className="text-dark fw-bold text-center">Top Albums</h1>
                 {loading ? (
                     <Loading />
                 ) : (
