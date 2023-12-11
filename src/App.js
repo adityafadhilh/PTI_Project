@@ -8,11 +8,12 @@ import AboutUs from "./pages/AboutUs";
 import Search from "./pages/Search";
 import GlobalStyles from "./styles/GlobalStyles";
 import TopAlbums from "./pages/TopAlbums";
+import { HashRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/search" component={Search} />
@@ -24,7 +25,7 @@ class App extends React.Component {
           <Route path="*" component={NotFound} />
         </Switch>
         <GlobalStyles />
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
