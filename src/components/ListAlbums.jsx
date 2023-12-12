@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 import { DivAlbums, MainAlbums } from "../styles/components/ListAlbums";
 
 function ListAlbums(props) {
-  const { response, artistInput } = props;
+  const { responseData, artistInput } = props;
   return (
     <MainAlbums>
       <p className="result">{artistInput} </p>
       <DivAlbums className="listAlbums">
-        {response.map((album, index) => (
+        {responseData.map((album, index) => (
           <div key={index} className="album">
             <img src={album.artworkUrl100} alt="Album" className="img" />
             <h2>{album.collectionName}</h2>

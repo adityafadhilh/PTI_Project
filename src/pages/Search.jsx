@@ -7,6 +7,7 @@ import { MainSearch, NotFound } from "../styles/pages/Search";
 import { Button } from "../styles/components/Button";
 import { MainForm } from "../styles/components/Form";
 import { Input } from "../styles/components/Input";
+import axios from "axios";
 
 class Search extends React.Component {
   constructor() {
@@ -16,7 +17,7 @@ class Search extends React.Component {
       buttonDisabled: true,
       artistInput: "",
       loading: false,
-      response: [],
+      responseData: [],
     };
   }
 
@@ -38,10 +39,24 @@ class Search extends React.Component {
 
   fetchArtist = async () => {
     const { artistInput } = this.state;
+    // try {
+    //   this.setState({ loading: true });
+    //   const response = await searchAlbumsAPI(artistInput);
+    //   this.setState({ loading: false, response, artistInput: " " });
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    const params = {
+      entity: "album",
+      term: artistInput,
+      attribute:"allArtistTerm"
+    }
+
     try {
-      this.setState({ loading: true });
-      const response = await searchAlbumsAPI(artistInput);
-      this.setState({ loading: false, response, artistInput: " " });
+      const response = await axios.get('/search', { params })
+      this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
+      console.log(response.data.results);
     } catch (error) {
       console.log(error);
     }
@@ -49,7 +64,7 @@ class Search extends React.Component {
   };
 
   render() {
-    const { buttonDisabled, artistInput, loading, response } = this.state;
+    const { buttonDisabled, artistInput, loading, responseData } = this.state;
     return (
       <MainSearch>
         <Header />
@@ -77,7 +92,7 @@ class Search extends React.Component {
             </Button>
           </MainForm>
         )}
-        {response.length > 0 && artistInput !== "" ? (
+        {responseData.length > 0 ? (
           <ListAlbums {...this.state} />
         ) : (
           <NotFound></NotFound>
