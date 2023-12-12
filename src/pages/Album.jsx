@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import { InfoDetails, MainDetails, MusicList } from '../styles/pages/Album';
+import axios from 'axios';
 
 class Album extends React.Component {
   constructor() {
@@ -21,9 +22,23 @@ class Album extends React.Component {
 
   fetchMusics = async () => {
     const { match: { params: { id } } } = this.props;
-    const songs = await getMusics(id);
-    const info = songs[0];
-    this.setState({ info, songs });
+    // const songs = await getMusics(id);
+    // const info = songs[0];
+    // this.setState({ info, songs });
+
+    const params = {
+      id: id,
+      entity: "song",
+    }
+
+    try {
+      const songs = (await axios.get('/lookup', { params })).data.results
+      const info = songs[0] 
+      this.setState({ loading: false, songs, info})
+      console.log(songs);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
