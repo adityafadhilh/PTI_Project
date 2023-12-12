@@ -22,30 +22,37 @@ class Album extends React.Component {
 
   fetchMusics = async () => {
     const { match: { params: { id } } } = this.props;
-    // const songs = await getMusics(id);
-    // const info = songs[0];
-    // this.setState({ info, songs });
 
-    const params = {
-      id: id,
-      entity: "song",
-    }
-
-    try {
-      let url = ""
-      console.log(process.env.NODE_ENV);
-      if (process.env.NODE_ENV === "production") {
-        url = "https://itunes.apple.com"
-      } else if (process.env.NODE_ENV === "development") {
-        url = ""
+    if (process.env.NODE_ENV === "production") {
+      const songs = await getMusics(id);
+      const info = songs[0];
+      this.setState({ info, songs });
+    } else if (process.env.NODE_ENV === "development") {
+      const params = {
+        id: id,
+        entity: "song",
       }
-      const songs = (await axios.get(`${url}/lookup`, { params })).data.results
-      const info = songs[0] 
-      this.setState({ loading: false, songs, info})
-      console.log(songs);
-    } catch (error) {
-      console.log(error);
+
+      try {
+        // let url = ""
+        // console.log(process.env.NODE_ENV);
+        // if (process.env.NODE_ENV === "production") {
+        //   url = "https://itunes.apple.com"
+        // } else if (process.env.NODE_ENV === "development") {
+        //   url = ""
+        // }
+        // const songs = (await axios.get(`${url}/lookup`, { params })).data.results
+        const songs = (await axios.get(`/lookup`, { params })).data.results
+        const info = songs[0]
+        this.setState({ loading: false, songs, info })
+        console.log(songs);
+      } catch (error) {
+        console.log(error);
+      }
     }
+
+
+
   }
 
   render() {
@@ -59,14 +66,14 @@ class Album extends React.Component {
           <InfoDetails>
             <div>
               <h2 data-testid="album-name">{collectionName}</h2>
-              <img src={ artworkUrl100 } alt={ collectionName } />
+              <img src={artworkUrl100} alt={collectionName} />
             </div>
             <MusicList>
-                {songs.filter((song) => song !== info)
-                  .map((s) => (<MusicCard
-                    song={ s }
-                    key={ s.trackId }
-                  />))}
+              {songs.filter((song) => song !== info)
+                .map((s) => (<MusicCard
+                  song={s}
+                  key={s.trackId}
+                />))}
             </MusicList>
           </InfoDetails>
         </MainDetails>
