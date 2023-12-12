@@ -66,6 +66,7 @@ class MusicCard extends React.Component {
   addFav = async () => {
     const { song } = this.props;
     this.setState({ loading: true });
+    console.log(song);
     await addSong(song);
     this.setState({ loading: false });
   };
@@ -78,6 +79,7 @@ class MusicCard extends React.Component {
   };
 
   handleFavs = ({ target }) => {
+    console.log(target);
     if (target.checked) {
       this.setState({ checked: target.checked }, this.addFav);
     } else {
@@ -119,8 +121,8 @@ class MusicCard extends React.Component {
   }
 }
 
-MusicCard.propTypes = {
-  song: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+// MusicCard.propTypes = {
+//   song: PropTypes.arrayOf(PropTypes.string).isRequired,
+// };
 
 export default MusicCard;
