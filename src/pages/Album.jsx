@@ -82,8 +82,8 @@ class Album extends React.Component {
   }
 }
 
-// Album.propTypes = {
-//   match: PropTypes.objectOf(PropTypes.string).isRequired,
-// };
+Album.propTypes = {
+  match: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default Album;

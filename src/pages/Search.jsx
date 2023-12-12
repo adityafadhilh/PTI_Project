@@ -43,7 +43,7 @@ class Search extends React.Component {
       try {
         this.setState({ loading: true });
         const response = await searchAlbumsAPI(artistInput);
-        this.setState({ loading: false, response, artistInput: " " });
+        this.setState({ loading: false, responseData: response, artistInput: "" });
       } catch (error) {
         console.log(error);
       }

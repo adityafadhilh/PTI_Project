@@ -121,8 +121,8 @@ class MusicCard extends React.Component {
   }
 }
 
-// MusicCard.propTypes = {
-//   song: PropTypes.arrayOf(PropTypes.string).isRequired,
-// };
+MusicCard.propTypes = {
+  song: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default MusicCard;
