@@ -1,5 +1,5 @@
 {
-  "proxy":"https://itunes.apple.com",
+  "proxy": "https://itunes.apple.com",
   "homepage": ".",
   "name": "trybetunes",
   "version": "0.1.0",

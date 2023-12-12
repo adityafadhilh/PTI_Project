@@ -32,7 +32,14 @@ class Album extends React.Component {
     }
 
     try {
-      const songs = (await axios.get('/lookup', { params })).data.results
+      let url = ""
+      console.log(process.env.NODE_ENV);
+      if (process.env.NODE_ENV === "production") {
+        url = "https://itunes.apple.com"
+      } else if (process.env.NODE_ENV === "development") {
+        url = ""
+      }
+      const songs = (await axios.get(`${url}/lookup`, { params })).data.results
       const info = songs[0] 
       this.setState({ loading: false, songs, info})
       console.log(songs);

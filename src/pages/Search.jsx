@@ -54,7 +54,13 @@ class Search extends React.Component {
     }
 
     try {
-      const response = await axios.get('/search', { params })
+      let url = ""
+      if (process.env.NODE_ENV === "production") {
+        url = "https://itunes.apple.com"
+      } else if (process.env.NODE_ENV === "development") {
+        url = ""
+      }
+      const response = await axios.get(`${url}/search`, { params })
       this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
       console.log(response.data.results);
     } catch (error) {
