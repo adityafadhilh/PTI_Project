@@ -22,34 +22,58 @@ class Album extends React.Component {
 
   fetchMusics = async () => {
     const { match: { params: { id } } } = this.props;
-
-    if (process.env.NODE_ENV === "production") {
-      const songs = await getMusics(id);
+    const songs = await getMusics(id);
       const info = songs[0];
       this.setState({ info, songs });
-    } else if (process.env.NODE_ENV === "development") {
-      const params = {
-        id: id,
-        entity: "song",
-      }
+    // const params = {
+    //   id: id,
+    //   entity: "song",
+    // }
 
-      try {
-        // let url = ""
-        // console.log(process.env.NODE_ENV);
-        // if (process.env.NODE_ENV === "production") {
-        //   url = "https://itunes.apple.com"
-        // } else if (process.env.NODE_ENV === "development") {
-        //   url = ""
-        // }
-        // const songs = (await axios.get(`${url}/lookup`, { params })).data.results
-        const songs = (await axios.get(`/lookup`, { params })).data.results
-        const info = songs[0]
-        this.setState({ loading: false, songs, info })
-        console.log(songs);
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    // try {
+      // let url = ""
+      // console.log(process.env.NODE_ENV);
+      // if (process.env.NODE_ENV === "production") {
+      //   url = "https://itunes.apple.com"
+      // } else if (process.env.NODE_ENV === "development") {
+      //   url = ""
+      // }
+      // const songs = (await axios.get(`${url}/lookup`, { params })).data.results
+    //   const songs = (await axios.get(`https://pti-backend-0f1a0610119f.herokuapp.com/lookup`, { params })).data.results
+    //   const info = songs[0]
+    //   this.setState({ loading: false, songs, info })
+    //   console.log(songs);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    // if (process.env.NODE_ENV === "production") {
+      // const songs = await getMusics(id);
+      // const info = songs[0];
+      // this.setState({ info, songs });
+    // } else if (process.env.NODE_ENV === "development") {
+    //   const params = {
+    //     id: id,
+    //     entity: "song",
+    //   }
+
+    //   try {
+    //     // let url = ""
+    //     // console.log(process.env.NODE_ENV);
+    //     // if (process.env.NODE_ENV === "production") {
+    //     //   url = "https://itunes.apple.com"
+    //     // } else if (process.env.NODE_ENV === "development") {
+    //     //   url = ""
+    //     // }
+    //     // const songs = (await axios.get(`${url}/lookup`, { params })).data.results
+    //     const songs = (await axios.get(`/lookup`, { params })).data.results
+    //     const info = songs[0]
+    //     this.setState({ loading: false, songs, info })
+    //     console.log(songs);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
 
 
 

@@ -4,6 +4,7 @@ import Loading from "./Loading";
 import { removeSong, addSong } from "../services/favoriteSongsAPI";
 import { AiFillStar } from "react-icons/ai";
 import { CardMusic } from "../styles/pages/Album";
+import { Button } from "react-bootstrap"
 
 class FavoriteCards extends React.Component {
   constructor() {
@@ -30,10 +31,21 @@ class FavoriteCards extends React.Component {
   };
 
   handleFavs = ({ target }) => {
-    if (!target.checked) {
-      this.setState({ checked: target.checked }, this.removeFav);
+    // if (!target.checked) {
+    //   this.setState({ checked: target.checked }, this.removeFav);
+    // } else {
+    //   this.setState({ checked: target.checked }, this.returnFavs);
+    // }
+    console.log(target);
+    // if (target.checked) {
+    //   this.setState({ checked: target.checked }, this.addFav);
+    // } else {
+    //   this.setState({ checked: target.checked }, this.removeFav);
+    // }
+    if (this.state.checked) {
+      this.setState({ checked: !this.state.checked}, this.removeFav)
     } else {
-      this.setState({ checked: target.checked }, this.returnFavs);
+      this.setState({ checked: !this.state.hecked}, this.addFav)
     }
   };
 
@@ -54,16 +66,16 @@ class FavoriteCards extends React.Component {
               Your browser doesn't support the element! <code>audio</code>
             </audio>
             <label htmlFor="favorite" className="checkedFav">
-              Favorite
-              <input
+              {/* Favorite */}
+              {/* <input
                 type="checkbox"
                 id="favorite"
                 data-testid={`checkbox-music-${trackId}`}
                 onChange={this.handleFavs}
                 name="favorite"
                 checked={checked}
-              />
-              <AiFillStar />
+              /> */}
+              <Button id={song.trackId} className="mt-3 bg-dark" onClick={this.handleFavs}><AiFillStar /></Button>
             </label>
           </CardMusic>
         )}

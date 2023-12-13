@@ -39,36 +39,64 @@ class Search extends React.Component {
 
   fetchArtist = async () => {
     const { artistInput } = this.state;
-    if (process.env.NODE_ENV === "production") {
-      try {
-        this.setState({ loading: true });
-        const response = await searchAlbumsAPI(artistInput);
-        this.setState({ loading: false, responseData: response, artistInput: "" });
-      } catch (error) {
-        console.log(error);
-      }
-    } else if (process.env.NODE_ENV === "development") {
-      const params = {
-        entity: "album",
-        term: artistInput,
-        attribute: "allArtistTerm"
-      }
-
-      try {
-        // let url = ""
-        // if (process.env.NODE_ENV === "production") {
-        //   url = "https://itunes.apple.com"
-        // } else if (process.env.NODE_ENV === "development") {
-        //   url = ""
-        // }
-        // const response = await axios.get(`${url}/search`, { params })
-        const response = await axios.get('/search', { params })
-        this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
-        console.log(response.data.results);
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+      this.setState({ loading: true });
+      const response = await searchAlbumsAPI(artistInput);
+      this.setState({ loading: false, responseData: response, artistInput: "" });
+    } catch (error) {
+      console.log(error);
     }
+    // const params = {
+    //   entity: "album",
+    //   term: artistInput,
+    //   attribute: "allArtistTerm"
+    // }
+
+    // try {
+      // let url = ""
+      // if (process.env.NODE_ENV === "production") {
+      //   url = "https://itunes.apple.com"
+      // } else if (process.env.NODE_ENV === "development") {
+      //   url = ""
+      // }
+      // const response = await axios.get(`${url}/search`, { params })
+    //   const response = await axios.get('https://pti-backend-0f1a0610119f.herokuapp.com/search', { params })
+    //   this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
+    //   console.log(response.data.results);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // if (process.env.NODE_ENV === "production") {
+    //   try {
+        // this.setState({ loading: true });
+        // const response = await searchAlbumsAPI(artistInput);
+        // this.setState({ loading: false, responseData: response, artistInput: "" });
+      // } catch (error) {
+      //   console.log(error);
+      // }
+    // } else if (process.env.NODE_ENV === "development") {
+      // const params = {
+      //   entity: "album",
+      //   term: artistInput,
+      //   attribute: "allArtistTerm"
+      // }
+
+      // try {
+      //   // let url = ""
+      //   // if (process.env.NODE_ENV === "production") {
+      //   //   url = "https://itunes.apple.com"
+      //   // } else if (process.env.NODE_ENV === "development") {
+      //   //   url = ""
+      //   // }
+      //   // const response = await axios.get(`${url}/search`, { params })
+      //   const response = await axios.get('/search', { params })
+      //   this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
+      //   console.log(response.data.results);
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      
+    // }
 
 
 
