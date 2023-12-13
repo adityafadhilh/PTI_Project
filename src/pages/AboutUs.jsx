@@ -6,7 +6,6 @@ import {
   Title,
   Description,
   TeamTitle,
-  ImageContainer,
   ImageWrapper,
   Image,
   ImageCaption,
