@@ -2,6 +2,10 @@
 
 https://alldaymusic.net/
 
+Dikarenakan pemanggilan api secara langsung akan terdapat cors blocked maka dibuat backend sebagai middleware
+
+Link Github middleware untuk proses pemanggilan API : **https://github.com/oneplusoneequal2/pti-backend**
+
 Jika tidak mendapat data dari API, dapat mengunduh chrome extension berikut ini :
 
 Chrome : **https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf**
