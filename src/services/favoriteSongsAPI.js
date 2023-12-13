@@ -17,25 +17,6 @@ const simulateRequest = (response) => (callback) => {
   }, TIMEOUT);
 };
 
-// export const getFavoriteSongs = () => new Promise((resolve) => {
-//   const favoriteSongs = readFavoriteSongs();
-//   simulateRequest(favoriteSongs)(resolve);
-// });
-
-// export const addSong = (song) => new Promise((resolve) => {
-//   if (song) {
-//     const favoriteSongs = readFavoriteSongs();
-//     saveFavoriteSongs([...favoriteSongs, song]);
-//   }
-//   simulateRequest(SUCCESS_STATUS)(resolve);
-// });
-
-// export const removeSong = (song) => new Promise((resolve) => {
-//   const favoriteSongs = readFavoriteSongs();
-//   saveFavoriteSongs(favoriteSongs.filter((s) => s.trackId !== song.trackId));
-//   simulateRequest(SUCCESS_STATUS)(resolve);
-// });
-
 export const getFavoriteSongs = () => new Promise((resolve) => {
   const favoriteSongs = readFavoriteSongs();
   simulateRequest(favoriteSongs)(resolve);
