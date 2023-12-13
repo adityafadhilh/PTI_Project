@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
-import Loading from "../components/Loading";
 import searchAlbumsAPI from "../services/searchAlbumsAPI";
 import ListAlbums from "../components/ListAlbums";
 import { MainSearch, NotFound } from "../styles/pages/Search";
 import { Button } from "../styles/components/Button";
 import { MainForm } from "../styles/components/Form";
 import { Input } from "../styles/components/Input";
-import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 class Search extends React.Component {
   constructor() {
@@ -46,61 +45,6 @@ class Search extends React.Component {
     } catch (error) {
       console.log(error);
     }
-    // const params = {
-    //   entity: "album",
-    //   term: artistInput,
-    //   attribute: "allArtistTerm"
-    // }
-
-    // try {
-      // let url = ""
-      // if (process.env.NODE_ENV === "production") {
-      //   url = "https://itunes.apple.com"
-      // } else if (process.env.NODE_ENV === "development") {
-      //   url = ""
-      // }
-      // const response = await axios.get(`${url}/search`, { params })
-    //   const response = await axios.get('https://pti-backend-0f1a0610119f.herokuapp.com/search', { params })
-    //   this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
-    //   console.log(response.data.results);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // if (process.env.NODE_ENV === "production") {
-    //   try {
-        // this.setState({ loading: true });
-        // const response = await searchAlbumsAPI(artistInput);
-        // this.setState({ loading: false, responseData: response, artistInput: "" });
-      // } catch (error) {
-      //   console.log(error);
-      // }
-    // } else if (process.env.NODE_ENV === "development") {
-      // const params = {
-      //   entity: "album",
-      //   term: artistInput,
-      //   attribute: "allArtistTerm"
-      // }
-
-      // try {
-      //   // let url = ""
-      //   // if (process.env.NODE_ENV === "production") {
-      //   //   url = "https://itunes.apple.com"
-      //   // } else if (process.env.NODE_ENV === "development") {
-      //   //   url = ""
-      //   // }
-      //   // const response = await axios.get(`${url}/search`, { params })
-      //   const response = await axios.get('/search', { params })
-      //   this.setState({ loading: false, responseData: response.data.results, artistInput: "" })
-      //   console.log(response.data.results);
-      // } catch (error) {
-      //   console.log(error);
-      // }
-      
-    // }
-
-
-
-
   };
 
   render() {
@@ -109,7 +53,7 @@ class Search extends React.Component {
       <MainSearch>
         <Header />
         {loading ? (
-          <Loading />
+          <div className="d-flex"><Spinner animation="border mx-auto" /></div>
         ) : (
           <MainForm>
             <h1 className="fw-bold text-dark mt-5">Search the artist:</h1>
