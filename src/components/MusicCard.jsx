@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Loading from "./Loading";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import {
@@ -9,46 +9,6 @@ import {
 import { CardMusic } from "../styles/pages/Album";
 import PropTypes from 'prop-types'
 import { Button } from "react-bootstrap";
-
-// function MusicCard(props) {
-//   const [loading, setLoading] = useState(false)
-//   const [checked, setChecked] = useState(false)
-//   const { song } = props
-//   const { trackName, previewUrl } = song;
-
-//   useEffect(() => {
-//     returnFavs()
-//   });
-
-//   const returnFavs = async () => {
-//     const { song } = this.props;
-//     const favs = await getFavoriteSongs
-//     const favsSongs = favs.some((msc) => msc.trackId === song.trackId);
-//     // setState({ checked: favsSongs });
-//     setChecked(true)
-//   };
-
-//   return (  
-//     <CardMusic>
-//       {loading && <Loading />}
-//       <h4>{trackName}</h4>
-//       <audio src={previewUrl} controls>
-//         <track kind="captions" />
-//         Your browser doesn't support the element! <code>audio</code>
-//       </audio>
-//       <label htmlFor="favorite">
-//         <input
-//           type="checkbox"
-//           id="favorite"
-//           onChange={handleFavs()}
-//           name="favorite"
-//           checked={checked}
-//         />
-//         <AiOutlineStar />
-//       </label>
-//     </CardMusic>
-//   )
-// }
 
 class MusicCard extends React.Component {
   constructor() {
@@ -81,17 +41,12 @@ class MusicCard extends React.Component {
 
   handleFavs = ({ target }) => {
     console.log(target);
-    // if (target.checked) {
-    //   this.setState({ checked: target.checked }, this.addFav);
-    // } else {
-    //   this.setState({ checked: target.checked }, this.removeFav);
-    // }
     if (this.state.checked) {
-      this.setState({ checked: !this.state.checked}, this.removeFav)
+      this.setState({ checked: !this.state.checked }, this.removeFav)
     } else {
-      this.setState({ checked: !this.state.hecked}, this.addFav)
+      this.setState({ checked: !this.state.hecked }, this.addFav)
     }
-    
+
   };
 
   returnFavs = async () => {
@@ -115,16 +70,8 @@ class MusicCard extends React.Component {
         </audio>
         <label htmlFor="favorite">
 
-          {/* <input
-            type="checkbox"
-            id="favorite"
-            onChange={this.handleFavs}
-            name="favorite"
-            checked={checked}
-          /> */}
           <Button id={song.trackId} className="mt-3 bg-dark" onClick={this.handleFavs}>
-          { checked ? <AiFillStar /> : <AiOutlineStar />}
-          {/* { checked ? "Remove from Favorite" : "Add to Favorite"} */}
+            {checked ? <AiFillStar /> : <AiOutlineStar />}
           </Button>
 
         </label>

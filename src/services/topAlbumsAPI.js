@@ -1,5 +1,3 @@
-import { topAlbumsData } from "../assets/data/topAlbums";
-
 const topAlbumsAPI = async () => {
 
   const getAlbumsAPI = 'https://pti-backend-0f1a0610119f.herokuapp.com/top';

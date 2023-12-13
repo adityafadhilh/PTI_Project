@@ -31,17 +31,7 @@ class FavoriteCards extends React.Component {
   };
 
   handleFavs = ({ target }) => {
-    // if (!target.checked) {
-    //   this.setState({ checked: target.checked }, this.removeFav);
-    // } else {
-    //   this.setState({ checked: target.checked }, this.returnFavs);
-    // }
     console.log(target);
-    // if (target.checked) {
-    //   this.setState({ checked: target.checked }, this.addFav);
-    // } else {
-    //   this.setState({ checked: target.checked }, this.removeFav);
-    // }
     if (this.state.checked) {
       this.setState({ checked: !this.state.checked}, this.removeFav)
     } else {
@@ -66,16 +56,7 @@ class FavoriteCards extends React.Component {
               Your browser doesn't support the element! <code>audio</code>
             </audio>
             <label htmlFor="favorite" className="checkedFav">
-              {/* Favorite */}
-              {/* <input
-                type="checkbox"
-                id="favorite"
-                data-testid={`checkbox-music-${trackId}`}
-                onChange={this.handleFavs}
-                name="favorite"
-                checked={checked}
-              /> */}
-              <Button id={song.trackId} className="mt-3 bg-dark" onClick={this.handleFavs}><AiFillStar /></Button>
+              <Button id={trackId} className="mt-3 bg-dark" onClick={this.handleFavs}><AiFillStar /></Button>
             </label>
           </CardMusic>
         )}
