@@ -1,5 +1,4 @@
 {
-  "proxy": "https://itunes.apple.com",
   "homepage": ".",
   "name": "pti_project",
   "version": "0.1.0",
