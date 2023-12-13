@@ -6,6 +6,8 @@ Dikarenakan pemanggilan api secara langsung akan terdapat cors blocked maka dibu
 
 Link Github middleware untuk proses pemanggilan API : **https://github.com/oneplusoneequal2/pti-backend**
 
+Saat pertama kali website dibuka kemungkinan saat load data API akan lama, jika mengalami hal ini silahkan tunggu sampai 20 detik
+
 Jika tidak mendapat data dari API, dapat mengunduh chrome extension berikut ini :
 
 Chrome : **https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf**
