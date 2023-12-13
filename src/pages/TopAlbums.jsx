@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
-import Loading from "../components/Loading";
-// import ListAlbums from "../components/ListAlbums";
 import topAlbumsAPI from "../services/topAlbumsAPI";
 import { NotFound } from "../styles/pages/Search";
-import { ListTop} from "../styles/pages/TopAlbums";
+import { ListTop } from "../styles/pages/TopAlbums";
+import { Spinner } from "react-bootstrap";
 
 class TopAlbums extends React.Component {
     constructor() {
@@ -33,15 +32,14 @@ class TopAlbums extends React.Component {
         return (
             <div>
                 <Header />
-                <h1 style={{ marginTop: 100  }} className="text-dark fw-bold text-center">Top Albums</h1>
+                <h1 style={{ marginTop: 100 }} className="text-dark fw-bold text-center">Top Albums</h1>
                 {loading ? (
-                    <Loading />
+                    <div className="d-flex"><Spinner animation="border mx-auto" /></div>
                 ) : (
                     response.length > 0 ? (
                         response.map((item, index) =>
                             <ListTop key={index}>
-                                {/* <h3>{index+1}</h3> */}
-                                <img src={item.artworkUrl100} alt="poster"/>
+                                <img src={item.artworkUrl100} alt="poster" />
                                 <h1>{item.collectionName}</h1>
                                 <h2>{item.artistName}</h2>
                             </ListTop>
