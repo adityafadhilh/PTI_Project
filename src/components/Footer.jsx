@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <MainFooter>
-        <p>&copy; ADSIC MUSIC</p>
+        <p>&copy; ADSIC</p>
       </MainFooter>
     );
   }
