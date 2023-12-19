@@ -11,7 +11,7 @@ function Header() {
     <Navbar fixed="top" expand="lg" bg="light">
       <Container>
         <Link to="/search" className="navbar-brand" data-testid="link-to-search-brand">
-          ASDIC
+          ADSIC
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
