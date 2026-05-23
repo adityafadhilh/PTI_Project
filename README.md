@@ -26,6 +26,9 @@ npm start
 
 
 ![screenshot](screenshots_web/adsic-home.png)
+
 ![screenshot](screenshots_web/adsic-favorites.png)
+
 ![screenshot](screenshots_web/adsic-search.png)
+
 ![screenshot](screenshots_web/adsic-top-albums.png)
