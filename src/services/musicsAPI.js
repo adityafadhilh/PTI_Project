@@ -1,5 +1,6 @@
 const getMusics = async (id) => {
-  const request = await fetch(`https://pti-backend-0f1a0610119f.herokuapp.com/lookup?id=${id}&entity=song`);
+  // const request = await fetch(`https://pti-backend-0f1a0610119f.herokuapp.com/lookup?id=${id}&entity=song`);
+  const request = await fetch(`http://localhost:80/lookup?id=${id}&entity=song`);
   const requestJson = await request.json();
   return requestJson.results;
 };

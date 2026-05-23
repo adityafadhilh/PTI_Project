@@ -1,7 +1,8 @@
 const searchAlbumsAPI = async (artist) => {
   const artistNameURL = encodeURI(artist).replaceAll('%20', '+');
 
-  const getAlbumsAPI = `https://pti-backend-0f1a0610119f.herokuapp.com/search?entity=album&term=${artistNameURL}&attribute=allArtistTerm`;
+  // const getAlbumsAPI = `https://pti-backend-0f1a0610119f.herokuapp.com/search?entity=album&term=${artistNameURL}&attribute=allArtistTerm`;
+  const getAlbumsAPI = `http://localhost:80/search?entity=album&term=${artistNameURL}&attribute=allArtistTerm`;
 
   const APIResponse = await fetch(getAlbumsAPI);
 
@@ -28,6 +29,7 @@ const searchAlbumsAPI = async (artist) => {
       trackCount,
     }),
   );
+  console.log(response);
   return response;
 };
 
